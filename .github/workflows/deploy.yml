@@ -2,8 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ] # Runs whenever you push to main
-  workflow_dispatch:      # Allows manual trigger
+    branches: [ "main" ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -25,10 +25,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'
+          # Removed cache: 'npm' to prevent errors if lockfile is missing
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build
         run: npm run build
@@ -36,7 +36,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # 'dist' for Vite/Next.js, 'build' for Create React App
+          # IMPORTANT: If this fails saying "path not found", change './dist' to './build'
+          path: ./dist
 
   deploy:
     environment:
