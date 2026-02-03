@@ -1,5 +1,5 @@
 import { Button } from './ui/button';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import backgroundImage from 'figma:asset/178fbba44f2295208e9cba82b89b3873a21fd90f.png';
 import icrLogo from 'figma:asset/29a88d676009f1a55a5bd1912236bfe82ecb01ac.png';
