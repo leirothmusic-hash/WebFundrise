@@ -43,7 +43,7 @@ export function Info() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 relative z-10 px-4 flex items-center justify-center">
+      <main className="flex-1 relative z-10 px-4 flex items-center justify-center pb-20">
         <div className="max-w-3xl mx-auto w-full">
           <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-6 md:p-10">
             <h2 className="text-2xl md:text-3xl font-bold text-blue-950 mb-4 text-center">
