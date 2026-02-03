@@ -25,7 +25,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          # Removed cache: 'npm' to prevent errors if lockfile is missing
 
       - name: Install Dependencies
         run: npm install
@@ -36,8 +35,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # IMPORTANT: If this fails saying "path not found", change './dist' to './build'
-          path: ./dist
+          # FIXED: Changed from './dist' to './build' to match vite.config.ts
+          path: ./build
 
   deploy:
     environment:
